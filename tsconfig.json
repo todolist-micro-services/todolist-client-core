@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@core/dto": ["src/dto/main.ts"],
+      "@core/core": ["src/core/main.ts"],
+      "@core/reducer": ["src/reducer/main.ts"],
+      "@core/utils": ["src/utils/main.ts"],
+      "@core/viewModels": ["src/viewModels/main.ts"],
+    }
+  }
+}
