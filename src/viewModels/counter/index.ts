@@ -1,6 +1,6 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
-import incrementAsync from "../../core/counter";
+import incrementAsync from "@core/core/counter";
 
 interface ViewModel {
   isRequestPending: boolean;

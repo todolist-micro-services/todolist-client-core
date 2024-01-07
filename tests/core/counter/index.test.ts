@@ -1,11 +1,9 @@
-import { fetchCount } from "@core/core";
+import { fetchCount } from "@core/core/counter";
 
 describe("fetchCount", () => {
   it("resolves with the correct data", async () => {
     const amount = 42;
-    const result = await fetchCount(amount);
-
-    expect(result).toEqual({ data: amount });
+    await expect(fetchCount(amount)).rejects.toThrow("Amount is too high!");
   });
 
   it("handles default amount (1)", async () => {

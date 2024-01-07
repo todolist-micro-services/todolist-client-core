@@ -14,20 +14,9 @@ export function fetchCount(amount = 1) {
 
 const incrementAsync = createAsyncThunk<number, number>(
   "counter/fetchCount",
-  async (amount: number, thunkAPI) => {
-    try {
-      const response = await fetchCount(amount);
-      return response.data;
-    } catch (error) {
-      if (error instanceof Error) {
-        thunkAPI.dispatch(incrementAsync.rejected(error, "", amount));
-      } else {
-        thunkAPI.dispatch(
-          incrementAsync.rejected(Error("Unknow error"), "", amount)
-        );
-      }
-      throw error;
-    }
+  async (amount: number) => {
+    const response = await fetchCount(amount);
+    return response.data;
   }
 );
 

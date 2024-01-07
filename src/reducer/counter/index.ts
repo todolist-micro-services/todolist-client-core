@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { initialState } from "@core/dto";
-import incrementAsync from "../../core/counter";
+
+import { initialCounterState } from "@core/dto";
+import incrementAsync from "@core/core/counter";
 
 export const counterSlice = createSlice({
   name: "counter",
-  initialState,
+  initialState: initialCounterState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -15,7 +16,7 @@ export const counterSlice = createSlice({
         state.status = "success";
         state.value += action.payload;
       })
-      .addCase(incrementAsync.rejected, (state) => {
+      .addCase(incrementAsync.rejected, (state, action) => {
         state.status = "failure";
       });
   },

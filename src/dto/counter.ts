@@ -8,5 +8,5 @@ const initialState: CounterState = {
   status: undefined,
 };
 
-export { initialState };
+export { initialState as initialCounterState };
 export type { CounterState };

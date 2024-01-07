@@ -10,10 +10,11 @@
     "baseUrl": ".",
     "paths": {
       "@core/dto": ["src/dto/main.ts"],
-      "@core/core": ["src/core/main.ts"],
-      "@core/reducer": ["src/reducer/main.ts"],
+      "@core/core/*": ["src/core/*"],
+      "@core/reducer/*": ["src/reducer/*"],
       "@core/utils": ["src/utils/main.ts"],
       "@core/viewModels": ["src/viewModels/main.ts"],
+      "@core/middleware": ["src/middleware/main.ts"],
     }
   }
 }

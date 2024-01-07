@@ -1,8 +1,8 @@
-import { CounterState, initialState } from "@core/dto";
+import { CounterState, initialCounterState } from "@core/dto";
 
 describe("CounterState", () => {
   it("should have the correct structure for initialState", () => {
-    expect(initialState).toEqual({
+    expect(initialCounterState).toEqual({
       value: 0,
       status: undefined,
     });
