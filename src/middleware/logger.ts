@@ -14,7 +14,7 @@ const loggerMiddleware = (store) => (next) => async (action) => {
     store.dispatch(setErrorMessage(action.error.message));
   } else {
     action.type != "SET_ERROR_MESSAGE" &&
-      action.type != "error/setErrorMessage" &&
+      action.type != "Error/setErrorMessage" &&
       console.log(action);
   }
   return next(action);

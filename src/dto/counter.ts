@@ -1,6 +1,8 @@
+import { Status } from "./status.ts";
+
 interface CounterState {
   value: number;
-  status: "success" | "pending" | "failure" | undefined;
+  status: Status;
 }
 
 const initialState: CounterState = {
