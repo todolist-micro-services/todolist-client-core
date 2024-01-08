@@ -1,10 +1,10 @@
-interface ErrorState {
+interface Error {
   errorMessage: string | null;
 }
 
-const initialState: ErrorState = {
+const initialError: Error = {
   errorMessage: null,
 };
 
-export { initialState as initialErrorState };
-export type { ErrorState };
+export { initialError };
+export type { Error };

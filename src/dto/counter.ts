@@ -1,14 +1,10 @@
-import { Status } from "./status.ts";
-
-interface CounterState {
+interface Counter {
   value: number;
-  status: Status;
 }
 
-const initialState: CounterState = {
+const initialCounter: Counter = {
   value: 0,
-  status: undefined,
 };
 
-export { initialState as initialCounterState };
-export type { CounterState };
+export { initialCounter };
+export type { Counter };

@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialCounter } from "@core/dto";
 import incrementAsync from "@core/core/counter";
-import { CounterState } from "./type.ts";
+import { initialToken } from "@core/dto";
+import { TokenState } from "./type.ts";
 import { UseCases } from "../types.ts";
 
-export const counterSlice = createSlice({
-  name: UseCases.Counter,
-  initialState: initialCounter as CounterState,
+export const loginSlice = createSlice({
+  name: UseCases.Login,
+  initialState: initialToken as TokenState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -16,7 +16,7 @@ export const counterSlice = createSlice({
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = "success";
-        state.value += action.payload;
+        state.value = action.payload.toString();
       })
       .addCase(incrementAsync.rejected, (state) => {
         state.status = "failure";
@@ -24,4 +24,4 @@ export const counterSlice = createSlice({
   },
 });
 
-export default counterSlice.reducer;
+export default loginSlice.reducer;

@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialErrorState } from "@core/dto";
+import { initialError } from "@core/dto";
 import { UseCases } from "../types.ts";
 
 const errorSlice = createSlice({
   name: UseCases.Error,
-  initialState: initialErrorState,
+  initialState: initialError,
   reducers: {
     setErrorMessage: (state, action) => {
       state.errorMessage = action.payload;

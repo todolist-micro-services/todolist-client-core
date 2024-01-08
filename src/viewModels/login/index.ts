@@ -1,31 +1,31 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import incrementAsync from "@core/core/counter";
-import { Counter } from "@core/dto";
 import { CheckStatus } from "@core/utils";
+import { Token } from "@core/dto";
 
 interface ViewModel {
   isRequestPending: boolean;
   isRequestSuccess: boolean;
   isRequestFailure: boolean;
-  count: Counter;
-  updateCount(amount: number): void;
+  token: Token;
+  login(email: string, password: string): void;
 }
 
-function useCountUpdate(): ViewModel {
+function useLogin(): ViewModel {
   const dispatch = useAppDispatch();
   return {
     isRequestFailure: CheckStatus.isStatusFailure(
-      useAppSelector((state: RootState) => state.counter.status) ?? ""
+      useAppSelector((state: RootState) => state.login.status) ?? ""
     ),
     isRequestPending: CheckStatus.isStatusPending(
-      useAppSelector((state: RootState) => state.counter.status) ?? ""
+      useAppSelector((state: RootState) => state.login.status) ?? ""
     ),
     isRequestSuccess: CheckStatus.isStatusSuccess(
-      useAppSelector((state: RootState) => state.counter.status) ?? ""
+      useAppSelector((state: RootState) => state.login.status) ?? ""
     ),
-    count: useAppSelector((state: RootState) => state.counter),
-    updateCount: (amount: number) => {
+    token: useAppSelector((state: RootState) => state.login),
+    login: (email: string, password: string) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
       dispatch(incrementAsync(amount));
@@ -33,4 +33,4 @@ function useCountUpdate(): ViewModel {
   };
 }
 
-export { useCountUpdate };
+export { useLogin };
