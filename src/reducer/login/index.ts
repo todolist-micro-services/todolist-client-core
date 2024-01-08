@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import incrementAsync from "@core/core/counter";
+import incrementAsync from "@core/core/login";
 import { initialToken } from "@core/dto";
 import { TokenState } from "./type.ts";
 import { UseCases } from "../types.ts";
@@ -16,7 +16,8 @@ export const loginSlice = createSlice({
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = "success";
-        state.value = action.payload.toString();
+        state.token = action.payload.token;
+        state.expiration = action.payload.expiration;
       })
       .addCase(incrementAsync.rejected, (state) => {
         state.status = "failure";

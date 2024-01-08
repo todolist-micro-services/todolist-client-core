@@ -1,6 +1,6 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
-import incrementAsync from "@core/core/counter";
+import incrementAsync from "@core/core/login";
 import { CheckStatus } from "@core/utils";
 import { Token } from "@core/dto";
 
@@ -28,7 +28,7 @@ function useLogin(): ViewModel {
     login: (email: string, password: string) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      dispatch(incrementAsync(amount));
+      dispatch(incrementAsync({ email, password }));
     },
   };
 }

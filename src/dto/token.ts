@@ -1,11 +1,11 @@
 interface Token {
-  value: string;
-  expirationDate: string;
+  token: string;
+  expiration: string;
 }
 
 const initialToken: Token = {
-  value: "",
-  expirationDate: "",
+  token: "",
+  expiration: "",
 };
 
 export { initialToken };

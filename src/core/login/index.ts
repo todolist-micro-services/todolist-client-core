@@ -1,25 +1,25 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
 import { UseCases } from "@core/reducer/types.ts";
+import { Token } from "@core/dto";
+import axios from "axios";
 
-function fetchCount(amount = 1) {
-  return new Promise<{ data: number }>((resolve, reject) =>
-    setTimeout(() => {
-      if (amount > 10) {
-        reject(new Error("Amount is too high!"));
-      } else {
-        resolve({ data: amount });
-      }
-    }, 500)
-  );
+async function loginApi(email: string, password: string): Promise<Token> {
+  return axios
+    .post("/auth/login", {
+      email,
+      password,
+    })
+    .then((response) => response.data)
+    .catch((error) => {
+      throw error;
+    });
 }
 
-const login = createAsyncThunk<number, number>(
-  UseCases.Login,
-  async (amount: number) => {
-    const response = await fetchCount(amount);
-    return response.data;
-  }
-);
+const incrementAsync = createAsyncThunk<
+  Token,
+  { email: string; password: string }
+>(UseCases.Login, async ({ email, password }) => {
+  return await loginApi(email, password);
+});
 
-export default login;
+export default incrementAsync;
