@@ -8,7 +8,9 @@ const errorSlice = createSlice({
   initialState: initialError,
   reducers: {
     setErrorMessage: (state, action) => {
+      state.id += 1;
       state.errorMessage = action.payload;
+      state.time = new Date();
     },
   },
 });

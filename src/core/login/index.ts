@@ -1,25 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UseCases } from "@core/reducer/types.ts";
 import { Token } from "@core/dto";
-import axios from "axios";
+import { httpRequest } from "@core/utils";
 
-async function loginApi(email: string, password: string): Promise<Token> {
-  return axios
-    .post("/auth/login", {
-      email,
-      password,
-    })
-    .then((response) => response.data)
-    .catch((error) => {
-      throw error;
-    });
-}
+const loginCore = createAsyncThunk<Token, { email: string; password: string }>(
+  UseCases.Login,
+  async ({ email, password }) => {
+    try {
+      return await httpRequest({
+        endpoint: "/auth/login",
+        method: "POST",
+        body: { email, password },
+      });
+    } catch (error: any) {
+      throw error.response?.data?.error || "An error occurred.";
+    }
+  }
+);
 
-const incrementAsync = createAsyncThunk<
-  Token,
-  { email: string; password: string }
->(UseCases.Login, async ({ email, password }) => {
-  return await loginApi(email, password);
-});
-
-export default incrementAsync;
+export default loginCore;

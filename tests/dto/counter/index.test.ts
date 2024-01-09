@@ -1,17 +1,16 @@
-import { CounterState, initialCounterState } from "@core/dto";
+import { Counter, initialCounter } from "@core/dto";
 
-describe("CounterState", () => {
+describe("Counter", () => {
   it("should have the correct structure for initialState", () => {
-    expect(initialCounterState).toEqual({
+    expect(initialCounter).toEqual({
       value: 0,
       status: undefined,
     });
   });
 
-  it("should have the correct TypeScript type for CounterState", () => {
-    const testState: CounterState = {
+  it("should have the correct TypeScript type for Counter", () => {
+    const testState: Counter = {
       value: 42,
-      status: "success",
     };
 
     expect(testState).toBeDefined();
