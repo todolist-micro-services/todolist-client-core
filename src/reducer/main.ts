@@ -4,6 +4,7 @@ import counterReducer from "./counter";
 import errorReducer from "./error";
 import loginReducer from "./auth/login";
 import registerReducer from "./auth/register";
+import retrieveUserReducer from "./users/retrieveUser";
 import { UseCases } from "./types.ts";
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   login: loginReducer,
   error: errorReducer,
   register: registerReducer,
+  retrieveUser: retrieveUserReducer,
 });
 
 export default rootReducer;

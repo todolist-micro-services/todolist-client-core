@@ -4,6 +4,7 @@ enum UseCases {
   Login = "Login",
   Counter = "Counter",
   Error = "Error",
+  RetrieveUser = "RetrieveUser",
 }
 
 export { UseCases };

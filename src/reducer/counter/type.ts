@@ -4,4 +4,4 @@ type CounterState = Omit<typeof initialCounter, "status"> & {
   status: Status;
 };
 
-export { CounterState };
+export type { CounterState };

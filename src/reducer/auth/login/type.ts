@@ -4,4 +4,4 @@ type TokenState = Omit<typeof initialToken, "status"> & {
   status: Status;
 };
 
-export { TokenState };
+export type { TokenState };
