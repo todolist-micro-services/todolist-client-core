@@ -1,28 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import incrementAsync from "@core/core/login";
+import registerCore from "@core/core/auth/register";
 import { initialToken } from "@core/dto";
 import { TokenState } from "./type.ts";
-import { UseCases } from "../types.ts";
+import { UseCases } from "../../types.ts";
 
-export const loginSlice = createSlice({
-  name: UseCases.Login,
+export const registerSlice = createSlice({
+  name: UseCases.Register,
   initialState: initialToken as TokenState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(registerCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(registerCore.fulfilled, (state, action) => {
         state.status = "success";
         state.token = action.payload.token;
         state.expiration = action.payload.expiration;
       })
-      .addCase(incrementAsync.rejected, (state) => {
+      .addCase(registerCore.rejected, (state) => {
         state.status = "failure";
       });
   },
 });
 
-export default loginSlice.reducer;
+export default registerSlice.reducer;

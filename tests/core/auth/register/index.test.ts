@@ -1,6 +1,6 @@
 import { httpRequest } from "@core/utils";
 import { Token } from "@core/dto";
-import loginCore from "@core/core/login";
+import registerCore from "@core/core/auth/register";
 
 jest.mock("@core/utils", () => ({
   __esModule: true,
@@ -8,8 +8,8 @@ jest.mock("@core/utils", () => ({
   httpRequest: jest.fn(),
 }));
 
-describe("loginCore async thunk", () => {
-  it("should handle successful login", async () => {
+describe("registerCore async thunk", () => {
+  it("should handle successful register", async () => {
     const dispatch = jest.fn();
     const getState = jest.fn();
     const mockToken: Token = {
@@ -19,14 +19,15 @@ describe("loginCore async thunk", () => {
 
     (httpRequest as jest.Mock).mockResolvedValue(mockToken);
 
-    await loginCore({ email: "test@example.com", password: "password" })(
-      dispatch,
-      getState,
-      undefined
-    );
+    await registerCore({
+      firstname: "John",
+      lastname: "Doe",
+      email: "test@example.com",
+      password: "password",
+    })(dispatch, getState, undefined);
   });
 
-  it("should handle login failure", async () => {
+  it("should handle register failure", async () => {
     const dispatch = jest.fn();
     const getState = jest.fn();
 
@@ -38,7 +39,9 @@ describe("loginCore async thunk", () => {
       },
     };
     (httpRequest as jest.Mock).mockRejectedValue(mockError);
-    await loginCore({
+    await registerCore({
+      firstname: "John",
+      lastname: "Doe",
       email: "invalid@example.com",
       password: "wrongPassword",
     })(dispatch, getState, undefined);

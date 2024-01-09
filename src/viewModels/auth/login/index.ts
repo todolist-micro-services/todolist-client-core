@@ -1,6 +1,6 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
-import loginCore from "@core/core/login";
+import loginCore from "@core/core/auth/login";
 import { CheckStatus } from "@core/utils";
 import { Token } from "@core/dto";
 
