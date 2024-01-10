@@ -6,7 +6,7 @@ const loggerMiddleware = (store) => (next) => async (action) => {
   }
 
   if (action.error) {
-    console.log(action.error);
+    console.log(action);
     store.dispatch({
       type: "SET_ERROR_MESSAGE",
       payload: action.error.message,
