@@ -1,36 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { initialUser } from "@core/dto";
+import updateUserCore from "@core/core/users/updateUser";
 import { UserState } from "./type.ts";
 import { UseCases } from "../../types.ts";
-import retrieveUserCore from "@core/core/users/retrieveUser";
-import updateUser from "@core/core/users/updateUser";
 
-export const retrieveUserSlice = createSlice({
-  name: UseCases.RetrieveUser,
+export const updateUserSlice = createSlice({
+  name: UseCases.DeleteUser,
   initialState: initialUser as UserState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(retrieveUserCore.pending, (state) => {
+      .addCase(updateUserCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(retrieveUserCore.fulfilled, (state, action) => {
+      .addCase(updateUserCore.fulfilled, (state, action) => {
         state.status = "success";
         state.id = action.payload.id;
         state.firstname = action.payload.firstname;
         state.lastname = action.payload.lastname;
         state.email = action.payload.email;
       })
-      .addCase(retrieveUserCore.rejected, (state) => {
+      .addCase(updateUserCore.rejected, (state) => {
         state.status = "failure";
-      })
-      .addCase(updateUser.pending, (state, action) => {
-        const { user } = action.meta.arg;
-        state.firstname = user.firstname;
-        state.lastname = user.lastname;
       });
   },
 });
 
-export default retrieveUserSlice.reducer;
+export default updateUserSlice.reducer;

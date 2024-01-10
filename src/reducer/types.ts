@@ -5,6 +5,8 @@ enum UseCases {
   Counter = "Counter",
   Error = "Error",
   RetrieveUser = "RetrieveUser",
+  DeleteUser = "DeleteUser",
+  UpdateUser = "UpdateUser",
 }
 
 export { UseCases };
