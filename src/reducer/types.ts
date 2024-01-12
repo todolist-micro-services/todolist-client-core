@@ -7,6 +7,10 @@ enum UseCases {
   RetrieveUser = "RetrieveUser",
   DeleteUser = "DeleteUser",
   UpdateUser = "UpdateUser",
+  CreateProject = "CreateProject",
+  UpdateProject = "UpdateProject",
+  DeleteProject = "DeleteProject",
+  RetrieveAllProjects = "RetrieveAllProjects",
 }
 
 export { UseCases };
