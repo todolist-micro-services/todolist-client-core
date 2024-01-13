@@ -1,23 +1,30 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { UseCases } from "@core/reducer/types.ts";
-import { User } from "@core/dto";
+import { Identifiable, Project } from "@core/dto";
 import { httpRequest } from "@core/utils";
 
-const updateProjectCore = createAsyncThunk<User, { token: string }>(
-  UseCases.RetrieveUser,
-  async ({ token }) => {
-    try {
-      return await httpRequest({
-        endpoint: "/users/me",
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    } catch (error: any) {
-      throw error.response?.data?.error || "An error occurred.";
-    }
+const updateProjectCore = createAsyncThunk<
+  Identifiable<Project>,
+  { oldProject: Identifiable<Project>; newProject: Project; token: string }
+>(UseCases.UpdateProject, async ({ oldProject, newProject, token }) => {
+  try {
+    return await httpRequest({
+      endpoint: "/projects/update",
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: {
+        id: oldProject.uuid,
+        name: newProject.name,
+        description: newProject.description,
+        creationDate: oldProject.creationDate.toISOString().replace(/\..+/, ""),
+        creator: oldProject.creator,
+      },
+    });
+  } catch (error: any) {
+    throw error.response?.data?.error || "An error occurred.";
   }
-);
+});
 
 export default updateProjectCore;

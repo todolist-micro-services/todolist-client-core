@@ -1,7 +1,7 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import { CheckStatus } from "@core/utils";
-import { Id, Identifiable, Project, User } from "@core/dto";
+import { Identifiable, Project, User } from "@core/dto";
 import linkUserToProjectCore from "@core/core/projects/linkUserToProject";
 
 interface ViewModel {

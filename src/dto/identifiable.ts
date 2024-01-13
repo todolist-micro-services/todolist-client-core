@@ -1,5 +1,5 @@
 import { Id } from "./id";
 
-type Identifiable<Type> = Type & { uuid: Id };
+type Identifiable<Type> = Type & { id: Id };
 
 export { Identifiable };

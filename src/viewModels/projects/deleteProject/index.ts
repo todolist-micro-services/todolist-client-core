@@ -2,6 +2,7 @@ import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import { CheckStatus } from "@core/utils";
 import { Id } from "@core/dto";
+import deleteProjectCore from "@core/core/projects/deleteProject";
 
 interface ViewModel {
   isRequestPending: boolean;
@@ -14,18 +15,18 @@ function useProjectRemoval(): ViewModel {
   const dispatch = useAppDispatch();
   return {
     isRequestFailure: CheckStatus.isStatusFailure(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.deleteProject.status) ?? ""
     ),
     isRequestPending: CheckStatus.isStatusPending(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.deleteProject.status) ?? ""
     ),
     isRequestSuccess: CheckStatus.isStatusSuccess(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.deleteProject.status) ?? ""
     ),
     deleteProject: (projectId, token) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      dispatch(deleteProjectCore({ projectId, token }));
+      dispatch(deleteProjectCore({ project: projectId, token }));
     },
   };
 }

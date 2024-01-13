@@ -3,8 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import createProjectCore from "@core/core/projects/createProject";
 import { UseCases } from "../../types.ts";
 import { initialProject } from "./type.ts";
-import linkUserToProjectCore from "@core/core/projects/linkUserToProject";
-import { useAppDispatch } from "@core/utils";
 
 export const createProjectSlice = createSlice({
   name: UseCases.CreateProject,

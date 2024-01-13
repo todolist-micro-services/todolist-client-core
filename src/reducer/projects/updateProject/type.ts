@@ -1,7 +1,13 @@
-import { initialProject, Status } from "@core/dto";
+import {
+  Identifiable,
+  Project,
+  Status,
+  initialProject as init,
+} from "@core/dto";
 
-type ProjectState = Omit<typeof initialProject, "status"> & {
-  status: Status;
+const initialProject = {
+  status: undefined as Status,
+  projects: { ...init, uuid: 0 } as Identifiable<Project>,
 };
 
-export type { ProjectState };
+export { initialProject };

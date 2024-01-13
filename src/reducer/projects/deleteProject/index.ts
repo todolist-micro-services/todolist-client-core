@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { initialProject } from "@core/dto";
+import deleteProjectCore from "@core/core/projects/deleteProject";
 import { UseCases } from "../../types.ts";
-import retrieveUserCore from "@core/core/users/retrieveUser";
 import { ProjectState } from "./type.ts";
 
 export const deleteProjectSlice = createSlice({
@@ -11,13 +11,13 @@ export const deleteProjectSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(retrieveUserCore.pending, (state) => {
+      .addCase(deleteProjectCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(retrieveUserCore.fulfilled, (state, action) => {
+      .addCase(deleteProjectCore.fulfilled, (state, action) => {
         state.status = "success";
       })
-      .addCase(retrieveUserCore.rejected, (state) => {
+      .addCase(deleteProjectCore.rejected, (state) => {
         state.status = "failure";
       });
   },

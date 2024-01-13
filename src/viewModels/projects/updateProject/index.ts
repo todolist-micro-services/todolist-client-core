@@ -20,20 +20,20 @@ function useProjectUpdate(): ViewModel {
   const dispatch = useAppDispatch();
   return {
     isRequestFailure: CheckStatus.isStatusFailure(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.updateProject.status) ?? ""
     ),
     isRequestPending: CheckStatus.isStatusPending(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.updateProject.status) ?? ""
     ),
     isRequestSuccess: CheckStatus.isStatusSuccess(
-      useAppSelector((state: RootState) => state.createProject.status) ?? ""
+      useAppSelector((state: RootState) => state.updateProject.status) ?? ""
     ),
     project: {
       creationDate: new Date(),
       name: "",
       description: "",
       creator: 0,
-      uuid: "",
+      id: 0,
     },
     updateProject: (oldProject, newProject, token) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
