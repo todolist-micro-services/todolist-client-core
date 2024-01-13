@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import createProjectCore from "@core/core/projects/createProject";
 import { UseCases } from "../../types.ts";
 import { initialProject } from "./type.ts";
-import { deleteProjectSlice } from "@core/reducer/projects/deleteProject";
 
 export const createProjectSlice = createSlice({
   name: UseCases.CreateProject,

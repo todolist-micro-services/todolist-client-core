@@ -1,7 +1,7 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import { CheckStatus } from "@core/utils";
-import { Id, Identifiable, Project } from "@core/dto";
+import { Identifiable, Project } from "@core/dto";
 import retrieveAllProjectsCore from "@core/core/projects/retrieveAllProjects";
 
 interface ViewModel {

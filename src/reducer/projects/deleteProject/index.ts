@@ -18,7 +18,7 @@ export const deleteProjectSlice = createSlice({
       .addCase(deleteProjectCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(deleteProjectCore.fulfilled, (state, action) => {
+      .addCase(deleteProjectCore.fulfilled, (state) => {
         state.status = "success";
       })
       .addCase(deleteProjectCore.rejected, (state) => {

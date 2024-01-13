@@ -14,7 +14,7 @@ export const createProjectSlice = createSlice({
       .addCase(retrieveUserCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(retrieveUserCore.fulfilled, (state, action) => {
+      .addCase(retrieveUserCore.fulfilled, (state) => {
         state.status = "success";
       })
       .addCase(retrieveUserCore.rejected, (state) => {

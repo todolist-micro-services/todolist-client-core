@@ -18,9 +18,8 @@ export const retrieveAllProjectsSlice = createSlice({
       })
       .addCase(retrieveAllProjectsCore.fulfilled, (state, action) => {
         state.status = "success";
-        state.projects = action.payload.map((project, key) => ({
+        state.projects = action.payload.map((project) => ({
           ...project,
-          // uuid: action.payload.at(key).id,
         }));
       })
       .addCase(retrieveAllProjectsCore.rejected, (state) => {
