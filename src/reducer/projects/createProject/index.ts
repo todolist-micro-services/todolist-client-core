@@ -3,11 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import createProjectCore from "@core/core/projects/createProject";
 import { UseCases } from "../../types.ts";
 import { initialProject } from "./type.ts";
+import { deleteProjectSlice } from "@core/reducer/projects/deleteProject";
 
 export const createProjectSlice = createSlice({
   name: UseCases.CreateProject,
   initialState: initialProject,
-  reducers: {},
+  reducers: {
+    resetCreateProjectStatus: (state) => {
+      state.status = undefined;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(createProjectCore.pending, (state) => {
@@ -24,3 +29,4 @@ export const createProjectSlice = createSlice({
 });
 
 export default createProjectSlice.reducer;
+export const { resetCreateProjectStatus } = createProjectSlice.actions;

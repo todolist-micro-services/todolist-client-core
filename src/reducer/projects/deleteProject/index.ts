@@ -8,7 +8,11 @@ import { ProjectState } from "./type.ts";
 export const deleteProjectSlice = createSlice({
   name: UseCases.DeleteProject,
   initialState: initialProject as ProjectState,
-  reducers: {},
+  reducers: {
+    resetDeleteProjectStatus: (state) => {
+      state.status = undefined;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(deleteProjectCore.pending, (state) => {
@@ -24,3 +28,4 @@ export const deleteProjectSlice = createSlice({
 });
 
 export default deleteProjectSlice.reducer;
+export const { resetDeleteProjectStatus } = deleteProjectSlice.actions;

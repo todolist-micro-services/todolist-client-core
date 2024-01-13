@@ -7,7 +7,7 @@ import {
 
 const initialProject = {
   status: undefined as Status,
-  projects: { ...init, uuid: 0 } as Identifiable<Project>,
+  project: { ...init, id: 0 } as Identifiable<Project>,
 };
 
 export { initialProject };

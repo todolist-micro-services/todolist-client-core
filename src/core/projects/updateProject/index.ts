@@ -15,7 +15,7 @@ const updateProjectCore = createAsyncThunk<
         Authorization: `Bearer ${token}`,
       },
       body: {
-        id: oldProject.uuid,
+        id: oldProject.id,
         name: newProject.name,
         description: newProject.description,
         creationDate: oldProject.creationDate.toISOString().replace(/\..+/, ""),

@@ -7,7 +7,11 @@ import { initialProject } from "./type.ts";
 export const updateProjectSlice = createSlice({
   name: UseCases.UpdateProject,
   initialState: initialProject,
-  reducers: {},
+  reducers: {
+    resetUpdateProjectStatus: (state) => {
+      state.status = undefined;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(updateProjectCore.pending, (state) => {
@@ -23,3 +27,4 @@ export const updateProjectSlice = createSlice({
 });
 
 export default updateProjectSlice.reducer;
+export const { resetUpdateProjectStatus } = updateProjectSlice.actions;

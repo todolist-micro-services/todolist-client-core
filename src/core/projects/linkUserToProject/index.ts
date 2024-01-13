@@ -16,7 +16,7 @@ const linkUserToProjectCore = createAsyncThunk<
       },
       body: {
         user: user.id,
-        project: project.uuid,
+        project: project.id,
       },
     });
   } catch (error: any) {
