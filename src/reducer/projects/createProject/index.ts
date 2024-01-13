@@ -1,23 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialProject } from "@core/dto";
+import createProjectCore from "@core/core/projects/createProject";
 import { UseCases } from "../../types.ts";
-import retrieveUserCore from "@core/core/users/retrieveUser";
-import { ProjectState } from "./type.ts";
+import { initialProject } from "./type.ts";
+import linkUserToProjectCore from "@core/core/projects/linkUserToProject";
+import { useAppDispatch } from "@core/utils";
 
 export const createProjectSlice = createSlice({
   name: UseCases.CreateProject,
-  initialState: initialProject as ProjectState,
+  initialState: initialProject,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(retrieveUserCore.pending, (state) => {
+      .addCase(createProjectCore.pending, (state) => {
         state.status = "pending";
       })
-      .addCase(retrieveUserCore.fulfilled, (state, action) => {
+      .addCase(createProjectCore.fulfilled, (state, action) => {
         state.status = "success";
+        state.id = action.payload.project;
       })
-      .addCase(retrieveUserCore.rejected, (state) => {
+      .addCase(createProjectCore.rejected, (state) => {
         state.status = "failure";
       });
   },

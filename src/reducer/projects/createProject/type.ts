@@ -1,7 +1,8 @@
-import { Status } from "@core/dto";
+import { Id, Status } from "@core/dto";
 
-type ProjectState = Omit<string, "status"> & {
-  status: Status;
+const initialProject = {
+  status: undefined as Status,
+  id: 0 as Id,
 };
 
-export type { ProjectState };
+export { initialProject };

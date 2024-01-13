@@ -8,3 +8,4 @@ export * from "./projects/createProject";
 export * from "./projects/updateProject";
 export * from "./projects/deleteProject";
 export * from "./projects/retrieveAllProjects";
+export * from "./projects/linkUserToProject";

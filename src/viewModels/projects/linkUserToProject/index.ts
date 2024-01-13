@@ -1,18 +1,21 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import { CheckStatus } from "@core/utils";
-import { Id, Project } from "@core/dto";
-import createProjectCore from "@core/core/projects/createProject";
+import { Id, Identifiable, Project, User } from "@core/dto";
+import linkUserToProjectCore from "@core/core/projects/linkUserToProject";
 
 interface ViewModel {
   isRequestPending: boolean;
   isRequestSuccess: boolean;
   isRequestFailure: boolean;
-  projectId: Id;
-  createProject(project: Project, token: string): void;
+  linkUserToProject(
+    user: User,
+    project: Identifiable<Project>,
+    token: string
+  ): void;
 }
 
-function useProjectCreation(): ViewModel {
+function useUserToProjectLinkCreation(): ViewModel {
   const dispatch = useAppDispatch();
   return {
     isRequestFailure: CheckStatus.isStatusFailure(
@@ -24,13 +27,12 @@ function useProjectCreation(): ViewModel {
     isRequestSuccess: CheckStatus.isStatusSuccess(
       useAppSelector((state: RootState) => state.createProject.status) ?? ""
     ),
-    projectId: useAppSelector((state: RootState) => state.createProject.id),
-    createProject: (project, token) => {
+    linkUserToProject: (user, project, token) => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      dispatch(createProjectCore({ project, token }));
+      dispatch(linkUserToProjectCore({ user, project, token }));
     },
   };
 }
 
-export { useProjectCreation };
+export { useUserToProjectLinkCreation };

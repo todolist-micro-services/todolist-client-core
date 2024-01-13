@@ -11,6 +11,7 @@ enum UseCases {
   UpdateProject = "UpdateProject",
   DeleteProject = "DeleteProject",
   RetrieveAllProjects = "RetrieveAllProjects",
+  LinkUserToProject = "LinkUserToProject",
 }
 
 export { UseCases };
