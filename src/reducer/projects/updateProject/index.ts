@@ -19,6 +19,7 @@ export const updateProjectSlice = createSlice({
       })
       .addCase(updateProjectCore.fulfilled, (state, action) => {
         state.status = "success";
+        state.project = action.payload;
       })
       .addCase(updateProjectCore.rejected, (state) => {
         state.status = "failure";

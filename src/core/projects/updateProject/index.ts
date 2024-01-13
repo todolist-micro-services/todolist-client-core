@@ -18,7 +18,7 @@ const updateProjectCore = createAsyncThunk<
         id: oldProject.id,
         name: newProject.name,
         description: newProject.description,
-        creationDate: oldProject.creationDate.toISOString().replace(/\..+/, ""),
+        creationDate: oldProject.creationDate,
         creator: oldProject.creator,
       },
     });

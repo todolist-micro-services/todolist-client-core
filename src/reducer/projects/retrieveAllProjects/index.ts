@@ -5,6 +5,7 @@ import { initialProject } from "./type.ts";
 import { UseCases } from "../../types.ts";
 import linkUserToProjectCore from "@core/core/projects/linkUserToProject";
 import deleteProjectCore from "@core/core/projects/deleteProject";
+import updateProjectCore from "@core/core/projects/updateProject";
 
 export const retrieveAllProjectsSlice = createSlice({
   name: UseCases.RetrieveAllProjects,
@@ -31,6 +32,17 @@ export const retrieveAllProjectsSlice = createSlice({
       .addCase(deleteProjectCore.fulfilled, (state, action) => {
         state.projects = state.projects.filter(
           (project) => project.id !== action.meta.arg.project
+        );
+      })
+      .addCase(updateProjectCore.pending, (state, action) => {
+        state.projects = state.projects.map((project) =>
+          project.id === action.meta.arg.oldProject.id
+            ? {
+                ...action.meta.arg.oldProject,
+                name: action.meta.arg.newProject.name,
+                description: action.meta.arg.newProject.description,
+              }
+            : project
         );
       });
   },
