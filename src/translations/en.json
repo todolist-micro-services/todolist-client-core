@@ -1,4 +1,9 @@
 {
   "title": "todolist micro services",
-  "description": "Developed by Pierre-Alexandre"
+  "description": "Developed by Pierre-Alexandre",
+  "component": {
+    "sideBar": {
+      "settingsRedirection": "Settings"
+    }
+  }
 }

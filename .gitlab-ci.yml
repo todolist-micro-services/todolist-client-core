@@ -3,7 +3,7 @@ ci:
     include:
       - project: 'todolist-micro-services/pipeline'
         ref: 'master'
-        file: 'client/typescript.yml'
+        file: 'src/node.yml'
     strategy: depend
   rules:
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'

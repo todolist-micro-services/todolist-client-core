@@ -4,3 +4,8 @@ export * from "./auth/register";
 export * from "./users/retrieveUser";
 export * from "./users/deleteUser";
 export * from "./users/updateUser";
+export * from "./projects/createProject";
+export * from "./projects/updateProject";
+export * from "./projects/deleteProject";
+export * from "./projects/retrieveAllProjects";
+export * from "./projects/linkUserToProject";
