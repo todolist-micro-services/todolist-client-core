@@ -12,6 +12,11 @@ enum UseCases {
   DeleteProject = "DeleteProject",
   RetrieveAllProjects = "RetrieveAllProjects",
   LinkUserToProject = "LinkUserToProject",
+  CreateList = "CreateList",
+  UpdateList = "UpdateList",
+  DeleteList = "DeleteList",
+  RetrieveAllProjectLists = "RetrieveAllProjectLists",
+  LinkUserToList = "LinkUserToList",
 }
 
 export { UseCases };

@@ -5,5 +5,28 @@
     "sideBar": {
       "settingsRedirection": "Settings"
     }
+  },
+  "pages": {
+    "home": {
+      "requestPending": "loading...",
+      "createList": "Create new list",
+      "noList": "No list to display"
+    }
+  },
+  "createList": {
+    "title": "Create list",
+    "cta": "Create list"
+  },
+  "updateList": {
+    "title": "Update list",
+    "deleteCta": "Delete list",
+    "updateCta": "Update",
+    "cancel": "Cancel"
+  },
+  "deleteList": {
+    "title": "Delete list",
+    "cancel": "Cancel",
+    "cta": "Delete",
+    "confirmation": "Are you sure you want to delete the list? All associated tasks will be deleted too."
   }
 }

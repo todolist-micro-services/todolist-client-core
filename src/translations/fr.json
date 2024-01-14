@@ -5,5 +5,28 @@
     "sideBar": {
       "settingsRedirection": "Paramêtres"
     }
+  },
+  "pages": {
+    "home": {
+      "requestPending": "chargement...",
+      "createList": "Créer une nouvelle liste",
+      "noList": "Pas de liste à afficher"
+    }
+  },
+  "createList": {
+    "title": "Création de liste",
+    "cta": "Créer la liste"
+  },
+  "updateList": {
+    "title": "Modifier la liste",
+    "deleteCta": "Supprimer la liste",
+    "updateCta": "Modifier",
+    "cancel": "Annuler"
+  },
+  "deleteList": {
+    "title": "Supprimer la liste",
+    "cancel": "Annuler",
+    "cta": "Supprimer",
+    "confirmation": "Êtes-vous sur de vouloir supprimer la liste ? Toutes les tâches associées seront supprimées aussi."
   }
 }
