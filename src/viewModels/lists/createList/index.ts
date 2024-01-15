@@ -1,8 +1,7 @@
 import { RootState } from "@core/utils";
 import { useAppDispatch, useAppSelector } from "@core/utils";
 import { CheckStatus } from "@core/utils";
-import { Id, List, Project } from "@core/dto";
-import createProjectCore from "@core/core/projects/createProject";
+import { Id, List } from "@core/dto";
 import createListCore from "@core/core/lists/createList";
 
 interface ViewModel {
