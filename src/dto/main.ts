@@ -7,3 +7,4 @@ export * from "./id.ts";
 export * from "./identifiable.ts";
 export * from "./project.ts";
 export * from "./list.ts";
+export * from "./task.ts";

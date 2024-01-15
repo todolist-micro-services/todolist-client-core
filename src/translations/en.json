@@ -10,7 +10,10 @@
     "home": {
       "requestPending": "loading...",
       "createList": "Create new list",
-      "noList": "No list to display"
+      "noList": "No list to display",
+      "list": {
+        "addTask": "Create task"
+      }
     }
   },
   "createList": {
@@ -28,5 +31,14 @@
     "cancel": "Cancel",
     "cta": "Delete",
     "confirmation": "Are you sure you want to delete the list? All associated tasks will be deleted too."
+  },
+  "createTask": {
+    "title": "Create task"
+  },
+  "deleteTask": {
+    "title": "Delete task"
+  },
+  "updateTask": {
+    "title": "Update task"
   }
 }

@@ -10,7 +10,10 @@
     "home": {
       "requestPending": "chargement...",
       "createList": "Créer une nouvelle liste",
-      "noList": "Pas de liste à afficher"
+      "noList": "Pas de liste à afficher",
+      "list": {
+        "addTask": "Créer une tâche"
+      }
     }
   },
   "createList": {
@@ -28,5 +31,14 @@
     "cancel": "Annuler",
     "cta": "Supprimer",
     "confirmation": "Êtes-vous sur de vouloir supprimer la liste ? Toutes les tâches associées seront supprimées aussi."
+  },
+  "createTask": {
+    "title": "Créer une tâche"
+  },
+  "deleteTask": {
+    "title": "Supprimer la tâche"
+  },
+  "updateTask": {
+    "title": "Modifier la tâche"
   }
 }
