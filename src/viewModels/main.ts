@@ -14,3 +14,8 @@ export * from "./lists/updateList";
 export * from "./lists/deleteList";
 export * from "./lists/retrieveAllProjectLists";
 export * from "./lists/linkUserToList";
+export * from "./tasks/createTask";
+export * from "./tasks/updateTask";
+export * from "./tasks/deleteTask";
+export * from "./tasks/retrieveProjectTasks";
+export * from "./tasks/linkUserToTask";

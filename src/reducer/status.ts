@@ -5,6 +5,9 @@ import { resetCreateProjectStatus } from "./projects/createProject";
 import { resetDeleteListStatus } from "./lists/deleteList";
 import { resetUpdateListStatus } from "./lists/updateList";
 import { resetCreateListStatus } from "./lists/createList";
+import { resetCreateTaskStatus } from "@core/reducer/tasks/createTask";
+import { resetDeleteTaskStatus } from "@core/reducer/tasks/deleteTask";
+import { resetUpdateTaskStatus } from "@core/reducer/tasks/updateTask";
 
 function useResetStatus(useCase: UseCases, dispatch: (data: any) => any) {
   useCase === UseCases.CreateProject && dispatch(resetCreateProjectStatus());
@@ -13,6 +16,9 @@ function useResetStatus(useCase: UseCases, dispatch: (data: any) => any) {
   useCase === UseCases.CreateList && dispatch(resetCreateListStatus());
   useCase === UseCases.DeleteList && dispatch(resetDeleteListStatus());
   useCase === UseCases.UpdateList && dispatch(resetUpdateListStatus());
+  useCase === UseCases.CreateTask && dispatch(resetCreateTaskStatus());
+  useCase === UseCases.DeleteTask && dispatch(resetDeleteTaskStatus());
+  useCase === UseCases.UpdateTask && dispatch(resetUpdateTaskStatus());
 }
 
 export { useResetStatus };
