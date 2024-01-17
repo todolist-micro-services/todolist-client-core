@@ -31,6 +31,7 @@
       "noList": "No list to display",
       "noProjects": "You have no project",
       "createProject": "Create project",
+      "noProjectSelected": "No project selected",
       "list": {
         "addTask": "Create task"
       }
@@ -41,6 +42,7 @@
       "delete": "Delete account",
       "disconnect": "Disconnect",
       "redirect": "Home",
+      "selectLanguage": "Selection language",
       "placeholder": {
         "firstname": "Firstname",
         "lastname": "Lastname",
@@ -72,5 +74,14 @@
   },
   "updateTask": {
     "title": "Update task"
+  },
+  "createProject": {
+    "title": "Create project",
+    "cta": "Confirm",
+    "cancel": "Cancel",
+    "placeholder": {
+      "title": "Title",
+      "description": "Description"
+    }
   }
 }
