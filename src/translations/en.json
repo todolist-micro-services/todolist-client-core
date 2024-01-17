@@ -1,4 +1,87 @@
 {
   "title": "todolist micro services",
-  "description": "Developed by Pierre-Alexandre"
+  "description": "Developed by Pierre-Alexandre",
+  "component": {
+    "sideBar": {
+      "settingsRedirection": "Settings",
+      "createProject": "Create project"
+    }
+  },
+  "pages": {
+    "landing": {
+      "login": "Login"
+    },
+    "login": {
+      "title": "Login page",
+      "login": "Login",
+      "register": "Register",
+      "confirm": "Submit",
+      "differentPassword": "Password are different",
+      "placeholder": {
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "email": "Email",
+        "password": "Password",
+        "passwordConfirm": "Confirm password"
+      }
+    },
+    "home": {
+      "requestPending": "loading...",
+      "createList": "Create new list",
+      "noList": "No list to display",
+      "noProjects": "You have no project",
+      "createProject": "Create project",
+      "noProjectSelected": "No project selected",
+      "list": {
+        "addTask": "Create task"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "update": "Update account",
+      "delete": "Delete account",
+      "disconnect": "Disconnect",
+      "redirect": "Home",
+      "selectLanguage": "Selection language",
+      "placeholder": {
+        "firstname": "Firstname",
+        "lastname": "Lastname",
+        "language": "Select language"
+      }
+    }
+  },
+  "createList": {
+    "title": "Create list",
+    "cta": "Create list"
+  },
+  "updateList": {
+    "title": "Update list",
+    "deleteCta": "Delete list",
+    "updateCta": "Update",
+    "cancel": "Cancel"
+  },
+  "deleteList": {
+    "title": "Delete list",
+    "cancel": "Cancel",
+    "cta": "Delete",
+    "confirmation": "Are you sure you want to delete the list? All associated tasks will be deleted too."
+  },
+  "createTask": {
+    "title": "Create task"
+  },
+  "deleteTask": {
+    "title": "Delete task"
+  },
+  "updateTask": {
+    "title": "Update task"
+  },
+  "createProject": {
+    "title": "Create project",
+    "cta": "Confirm",
+    "cancel": "Cancel",
+    "placeholder": {
+      "title": "Title",
+      "description": "Description"
+    }
+  }
 }

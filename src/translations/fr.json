@@ -1,4 +1,87 @@
 {
   "title": "todolist micro services",
-  "description": "Developpé par Pierre-Alexandre"
+  "description": "Developpé par Pierre-Alexandre",
+  "component": {
+    "sideBar": {
+      "settingsRedirection": "Paramètres",
+      "createProject": "Créer un projet"
+    }
+  },
+  "pages": {
+    "landing": {
+      "login": "Se connecter"
+    },
+    "login": {
+      "title": "Page de connection",
+      "login": "Connection",
+      "register": "S'enregistrer",
+      "confirm": "Confirmer",
+      "differentPassword": "Les mots de passe sont différents",
+      "placeholder": {
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "email": "Email",
+        "password": "Mot de passe",
+        "passwordConfirm": "Confirmer le mot de passe"
+      }
+    },
+    "home": {
+      "requestPending": "chargement...",
+      "createList": "Créer une nouvelle liste",
+      "noList": "Pas de liste à afficher",
+      "noProjects": "Vous n'avez pas de projet",
+      "createProject": "Créer un projet",
+      "noProjectSelected": "Pas de projet sélectionné",
+      "list": {
+        "addTask": "Créer une tâche"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "update": "Modifier le compte",
+      "delete": "Supprimer le compte",
+      "disconnect": "Déconnexion",
+      "redirect": "Home",
+      "selectLanguage": "Sélectionne la langue",
+      "placeholder": {
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "language": "Sélectionner la langue"
+      }
+    }
+  },
+  "createList": {
+    "title": "Création de liste",
+    "cta": "Créer la liste"
+  },
+  "updateList": {
+    "title": "Modifier la liste",
+    "deleteCta": "Supprimer la liste",
+    "updateCta": "Modifier",
+    "cancel": "Annuler"
+  },
+  "deleteList": {
+    "title": "Supprimer la liste",
+    "cancel": "Annuler",
+    "cta": "Supprimer",
+    "confirmation": "Êtes-vous sur de vouloir supprimer la liste ? Toutes les tâches associées seront supprimées aussi."
+  },
+  "createTask": {
+    "title": "Créer une tâche"
+  },
+  "deleteTask": {
+    "title": "Supprimer la tâche"
+  },
+  "updateTask": {
+    "title": "Modifier la tâche"
+  },
+  "createProject": {
+    "title": "Créer un projet",
+    "cta": "Confirmer",
+    "cancel": "Annuler",
+    "placeholder": {
+      "title": "Titre",
+      "description": "Description"
+    }
+  }
 }
