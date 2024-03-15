@@ -8,6 +8,10 @@
     }
   },
   "pages": {
+    "accountConfirmation": {
+      "redirection": "Aller vérifier vos mails pour valider votre compte",
+      "login": "Se connecter"
+    },
     "landing": {
       "login": "Se connecter"
     },
@@ -52,7 +56,8 @@
   },
   "createList": {
     "title": "Création de liste",
-    "cta": "Créer la liste"
+    "cta": "Créer la liste",
+    "cancel": "Annuler"
   },
   "updateList": {
     "title": "Modifier la liste",
@@ -67,13 +72,21 @@
     "confirmation": "Êtes-vous sur de vouloir supprimer la liste ? Toutes les tâches associées seront supprimées aussi."
   },
   "createTask": {
-    "title": "Créer une tâche"
+    "title": "Créer une tâche",
+    "cancel": "Annuler",
+    "create": "Créer la tâche"
   },
   "deleteTask": {
-    "title": "Supprimer la tâche"
+    "title": "Supprimer la tâche",
+    "confirmation": "Êtes-vous sur ? Il n'y a pas de retours en arrière possible.",
+    "cancel": "Annuler",
+    "delete": "Supprimer la tâche"
   },
   "updateTask": {
-    "title": "Modifier la tâche"
+    "title": "Modifier la tâche",
+    "changeList": "Séléctionner une liste",
+    "cancel": "Annuler",
+    "update": "Modifier"
   },
   "createProject": {
     "title": "Créer un projet",
@@ -83,5 +96,16 @@
       "title": "Titre",
       "description": "Description"
     }
+  },
+  "deleteProject": {
+    "title": "Supprimer le projet ",
+    "confirmation": "Êtes-vous sur de vouloir supprimer le projet ?",
+    "cancel": "Annuler",
+    "delete": "Supprimer"
+  },
+  "updateProject": {
+    "title": "Modifier le projet ",
+    "cancel": "Annuler",
+    "update": "Modifier"
   }
 }
